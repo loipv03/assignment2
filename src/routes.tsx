@@ -6,30 +6,35 @@ import Dashboard from "./pages/admin/dashboard";
 import AdminProduct from "./pages/admin/product";
 import AdminProductAdd from "./pages/admin/product/add";
 import AdminProductEdit from "./pages/admin/product/edit";
+import ProductDetail from "./pages/admin/product/detail";
 
 export const router = createBrowserRouter([
-    { path: "/", element: <LayoutWebsite /> },
-    {
-        path: "/admin",
-        element: <LayoutAdmin />,
-        children: [
-            { index: true, element: <Navigate to="dashboard" /> },
-            {
-                path: "dashboard",
-                element: <Dashboard />,
-            },
-            {
-                path: "product",
-                element: <AdminProduct />,
-            },
-            {
-                path: "product/add",
-                element: <AdminProductAdd />,
-            },
-            {
-                path: "product/:idProduct/edit",
-                element: <AdminProductEdit />,
-            },
-        ],
-    },
+  { path: "/", element: <LayoutWebsite /> },
+  {
+    path: "/admin",
+    element: <LayoutAdmin />,
+    children: [
+      { index: true, element: <Navigate to="dashboard" /> },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "product",
+        element: <AdminProduct />,
+      },
+      {
+        path: "product/add",
+        element: <AdminProductAdd />,
+      },
+      {
+        path: "product/:idProduct/edit",
+        element: <AdminProductEdit />,
+      },
+      {
+        path: "product/:idProduct/detail",
+        element: <ProductDetail />,
+      },
+    ],
+  },
 ]);
